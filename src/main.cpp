@@ -8,18 +8,24 @@
  */
 
 #include <iostream>
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 #include "candidato.hpp"
+#include "presidente.hpp"
 
 using namespace std;
 
-int main (int argc, char ** argv){
-	int escolha_menu, numero_do_candidato, numero_de_eleitores;
+int main (){
+
+	Presidente * presidente1 = new Presidente();
+	int escolha_menu, numero_de_eleitores, numero;
 	//Introdução
 	cout << endl << "		      URNA ELETRONICA" << endl << endl;
 	cout << "		Eleição Geral Federal 2018" << endl << "		   1º Turno - 07/10/2018" << endl;
 	
-	//Menu
 	while(1){
+	//Menu
 		cout << endl << endl <<"---------------------------------------------------------" << endl;
 		cout << endl <<"MENU PRINCIPAL:" << endl;
 		cout << endl << "Digite 1 para Visualizar Informações dos Candidato" << endl;
@@ -29,14 +35,12 @@ int main (int argc, char ** argv){
 		cin >> escolha_menu;
 	
 	//Escolhas, 1 para Informaçoes dos Candidatos e 2 para Votação 2018
+		//Escolha 1, Informações dos Candidatos
 		if(escolha_menu == 1){
-			cout << endl << endl <<"---------------------------------------------------------" << endl;
-			cout << endl <<"	INFORMAÇÕES DOS CANDIDATOS:" << endl;
-		
-			cout <<"	Digite Número do Candidato para Busca: ";
-			cin >> numero_do_candidato;
+			presidente1->lista_candidatos();
 		}
 
+		//Escolha 2, Votação 2018
 		else if(escolha_menu == 2){
 			cout << endl << endl <<"---------------------------------------------------------" << endl;
 			cout << endl <<"	VOTAÇÃO 2018:" << endl;
@@ -45,4 +49,5 @@ int main (int argc, char ** argv){
 			cin >> numero_de_eleitores;
 		}
 	}
+	return 0;
 }
