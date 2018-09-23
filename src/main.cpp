@@ -9,8 +9,6 @@
 
 #include <iostream>
 #include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
 #include "candidato.hpp"
 #include "presidente.hpp"
 
@@ -19,7 +17,7 @@ using namespace std;
 int main (){
 
 	Presidente * presidente1 = new Presidente();
-	int escolha_menu, numero_de_eleitores, numero;
+	int escolha_menu, numero_de_eleitores;
 	//Introdução
 	cout << endl << "		      URNA ELETRONICA" << endl << endl;
 	cout << "		Eleição Geral Federal 2018" << endl << "		   1º Turno - 07/10/2018" << endl;

@@ -7,10 +7,11 @@ using namespace std;
 
 class Presidente : public Candidato{
     
-    private:
+    protected:
     string nome_do_vice_candidato;
 
     public:
+    //Métodos
     Presidente();
     ~Presidente();
 
