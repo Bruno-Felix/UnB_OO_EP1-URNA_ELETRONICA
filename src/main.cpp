@@ -22,22 +22,25 @@ int main (){
 	cout << endl << "		      URNA ELETRONICA" << endl << endl;
 	cout << "		Eleição Geral Federal 2018" << endl << "		   1º Turno - 07/10/2018" << endl;
 	
-	while(1){
 	//Menu
 		cout << endl << endl <<"---------------------------------------------------------" << endl;
 		cout << endl <<"MENU PRINCIPAL:" << endl;
-		cout << endl << "Digite 1 para Visualizar Informações dos Candidato" << endl;
-		cout << "Digite 2 para Iniciar uma Votação" << endl;
+		cout << endl << "Digite \"1\" para Visualizar Informações dos Candidato" << endl;
+		cout << "Digite \"2\" para Iniciar uma Votação" << endl;
 	
 		cout << endl <<"Escolha do Menu: ";
 		cin >> escolha_menu;
 	
-	//Escolhas, 1 para Informaçoes dos Candidatos e 2 para Votação 2018
+		//Escolhas, 1 para Informaçoes dos Candidatos e 2 para Votação 2018
+		while(escolha_menu != 1 && escolha_menu != 2){
+			cout << endl << "Erro. Por Favor, Escolha uma das Opções: \"1\" ou \"2\". ";
+			cout << endl <<"Escolha do Menu: ";
+			cin >> escolha_menu;
+		}
 		//Escolha 1, Informações dos Candidatos
 		if(escolha_menu == 1){
 			presidente1->lista_candidatos();
 		}
-
 		//Escolha 2, Votação 2018
 		else if(escolha_menu == 2){
 			cout << endl << endl <<"---------------------------------------------------------" << endl;
@@ -46,6 +49,8 @@ int main (){
 			cout << "	Digite Número de Eleitores: ";
 			cin >> numero_de_eleitores;
 		}
-	}
+		
+
+	
 	return 0;
 }
