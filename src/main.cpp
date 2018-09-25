@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "candidato.hpp"
-#include "presidente.hpp"
+#include "listcandidatos.hpp"
 
 using namespace std;
 
@@ -47,7 +47,7 @@ void menu_options(){
 
 void escolha(){
 	
-	Presidente * presidente1 = new Presidente();
+	Listcandidatos * listcandidatos1 = new Listcandidatos();
 	int numero_de_eleitores;
 	char escolha_menu;
 
@@ -70,7 +70,7 @@ void escolha(){
 	//Escolha 1, Informações dos Candidatos
 	if(escolha_menu == 'i'){
 		system("clear");
-		presidente1->lista_candidatos();
+		listcandidatos1->lista_candidatos();
 		resposta();
 	}
 
@@ -91,9 +91,9 @@ void escolha(){
 
 void resposta(){
 	char resposta;
-	cout << "\n	Digite \"M\" para voltar ao menu"<< endl;
-	cout << "	Digite \"S\" para Sair" << endl;
-	cout << endl <<"	Escolha: ";
+	cout << "\n\tDigite \"M\" para voltar ao menu"<< endl;
+	cout << "\tDigite \"S\" para Sair" << endl;
+	cout << "\tEscolha: ";
 	
 	cin >> resposta;
 

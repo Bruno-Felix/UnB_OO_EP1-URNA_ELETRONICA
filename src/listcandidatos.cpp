@@ -1,21 +1,21 @@
 #include <iostream>
 #include <fstream>
-#include "presidente.hpp"
+#include "listcandidatos.hpp"
 
 using namespace std;
 
-Presidente::Presidente(){}
+Listcandidatos::Listcandidatos(){}
 
-Presidente::~Presidente(){}
+Listcandidatos::~Listcandidatos(){}
 
-string Presidente::get_nome_do_vice_candidato(){
+string Listcandidatos::get_nome_do_vice_candidato(){
 	return nome_do_vice_candidato;
 }    
-void Presidente::set_nome_do_vice_candidato(string nome_do_vice_candidato){
+void Listcandidatos::set_nome_do_vice_candidato(string nome_do_vice_candidato){
 	this-> nome_do_vice_candidato = nome_do_vice_candidato;
 }
 
-void Presidente::lista_candidatos(){
+void Listcandidatos::lista_candidatos(){
     
     //Variáveis
     string dfcands[1238][58];
