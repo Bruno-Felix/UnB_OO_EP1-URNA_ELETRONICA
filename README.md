@@ -1,7 +1,19 @@
 # Urna Eletronica:
 
-## Descrição Completa: [wiki](https://github.com/Bruno-Felix/OOEP1-Urna_Eletronica/wiki/Descri%C3%A7%C3%A3o)
+#### Data: 06/09 to 02/10 in 2018;
+#### Disciplina: Orientação a Objetos - UnB;
+#### Professor: Renato Coral Sampaio.
 
-### Data: 06/09 to 02/10 in 2018;
-### Disciplina: Orientação a Objetos - UnB;
-### Professor: Renato Coral Sampaio.
+## Acesse a descrição completa deste exercício: [wiki](https://github.com/Bruno-Felix/UnB_OO_EP1-URNA_ELETRONICA/wiki)
+
+* Compile o projeto com o comando:
+```sh
+make
+```
+
+* Execute o projeto com o comando:
+
+```sh
+make run
+```
+
