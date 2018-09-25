@@ -21,5 +21,7 @@ class Listcandidatos : public Candidato{
 
     void lista_candidatos();
     void informacao_candidato(int numero);
+    void lista_presidentes();
+    void lista_DF();
 };
 #endif

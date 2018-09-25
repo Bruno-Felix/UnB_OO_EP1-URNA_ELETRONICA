@@ -17,7 +17,7 @@
 using namespace std;
 
 void menu_options();
-void escolha();
+void escolha_menu();
 void resposta();
 void saida();
 
@@ -35,17 +35,17 @@ void menu_options(){
 	
 	//Menu
 	cout << endl << endl <<"---------------------------------------------------------" << endl;
-	cout <<"		      MENU PRINCIPAL:" << endl;
+	cout <<"		      MENU PRINCIPAL" << endl;
 	cout <<"---------------------------------------------------------" << endl;
 
 	cout << endl << "Digite \"I\" para Visualizar Informações dos Candidato" << endl;
 	cout << "Digite \"V\" para Iniciar uma Votação" << endl;
 	cout << "Digite \"S\" para Sair" << endl;
 
-	escolha();
+	escolha_menu();
 }
 
-void escolha(){
+void escolha_menu(){
 	
 	Listcandidatos * listcandidatos1 = new Listcandidatos();
 	int numero_de_eleitores;
@@ -62,7 +62,7 @@ void escolha(){
 
 	//Teste de exceção para a Escolha do Menu
 	while(escolha_menu != 'i' && escolha_menu != 'v' && escolha_menu != 's'){
-		cout << endl << "Por Favor, Escolha uma das Opções: \"1\" ou \"2\". ";
+		cout << endl << "Por Favor, Escolha uma das Opções: \"I\", \"V\" ou \"S\". ";
 		cout << endl <<"Escolha do Menu: ";
 		cin >> escolha_menu;
 	}
@@ -70,8 +70,37 @@ void escolha(){
 	//Escolha 1, Informações dos Candidatos
 	if(escolha_menu == 'i'){
 		system("clear");
-		listcandidatos1->lista_candidatos();
-		resposta();
+		char escolha;
+
+		cout << endl << endl <<"---------------------------------------------------------" << endl;
+		cout << endl <<"\tINFORMAÇÕES DOS CANDIDATOS" << endl << endl;
+		cout << "\n\tDigite \"P\" para Candidatos à Presidencia;"<< endl;
+		cout << "\tDigite \"D\" para Candidatos os Demais." << endl;
+		cout << "\tEscolha: ";
+		cin >> escolha;
+		cout << endl << endl;
+
+		if (escolha < 97) {
+			// Transforma as letras maiúsculas da escolha_menu do usuario em minúsculas
+			escolha = escolha + 32;
+		}
+
+		while(escolha != 'p' && escolha != 'd'){
+			cout << endl << "	Por Favor, Escolha uma das Opções: \"P\" ou \"D\": ";
+			cin >> escolha;
+		}
+
+		if(escolha == 'p'){
+			system("clear");
+			listcandidatos1->lista_presidentes();
+			resposta();
+		}
+
+		else if(escolha =='d'){
+			system("clear");
+			listcandidatos1->lista_DF();
+			resposta();
+		};
 	}
 
 	//Escolha 2, Votação 2018
@@ -91,13 +120,13 @@ void escolha(){
 
 void resposta(){
 	char resposta;
-	cout << "\n\tDigite \"M\" para voltar ao menu"<< endl;
-	cout << "\tDigite \"S\" para Sair" << endl;
-	cout << "\tEscolha: ";
+	cout << "\nDigite \"M\" para voltar ao menu;"<< endl;
+	cout << "Digite \"S\" para Sair." << endl;
+	cout << "Escolha: ";
 	
 	cin >> resposta;
 
-	if(resposta < 97) {
+	if(resposta < 97){
 		// Transforma as letras maiúsculas da resposta do usuario em minúsculas
 		resposta = resposta + 32;
 	}
@@ -119,6 +148,10 @@ void resposta(){
 
 void saida(){
 	system("clear");
-	cout << "\n\n		Insira make run para reiniciar o programa, Obrigado!\n\n" << endl;
+	cout << "\n\n\tInsira make run para reiniciar o programa, Obrigado!\n\n" << endl;
 	exit(0);
+}
+
+void qual_candidato(){
+
 }
