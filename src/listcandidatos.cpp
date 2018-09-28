@@ -16,6 +16,20 @@ void Listcandidatos::set_nome_do_vice_candidato(string nome_do_vice_candidato){
 	this-> nome_do_vice_candidato = nome_do_vice_candidato;
 }
 
+string Listcandidatos::get_nome_pri_supsenador(){
+    return nome_pri_supsenador;
+}
+void Listcandidatos::set_nome_pri_supsenador(string nome_pri_supsenador){
+    this -> nome_pri_supsenador = nome_pri_supsenador;
+}
+
+string Listcandidatos::get_nome_seg_supsenador(){
+    return nome_seg_supsenador;
+}
+void Listcandidatos::set_nome_seg_supsenador(string nome_seg_supsenador){
+    this -> nome_seg_supsenador = nome_seg_supsenador;
+}
+
 //Informaçoes dos Candidatos à Presidencia
 void Listcandidatos::lista_presidentes(){
     
@@ -72,7 +86,7 @@ void Listcandidatos::lista_presidentes(){
     //Impressão do dados BR
     system("clear");
     cout << endl << endl <<"---------------------------------------------------------" << endl;
-    cout << "\n\t\tPRESIDENTE" << endl << endl;
+    cout << "\n\t\t   PRESIDENTE" << endl << endl;
     cout << "\n\tCANDIDATO: " << nome_do_candidato << ";" << endl << endl;
     cout << "\t"<<"VICE-PRESIDENCIA: " << nome_do_vice_candidato << ";" << endl;
     cout << "\tNUMERO DO PARTIDO: " << numero_do_candidato << ";" <<endl;
@@ -133,35 +147,35 @@ void Listcandidatos::lista_DF(){
 		for(int j=0; j<58; j++){
             //Deputados
             if(numero_do_candidato == dfcands[i][16] && dfcands[i][14] == dep_federal){
-                deputado[0] = dfcands[i][18];
-                deputado[1] = dfcands[i][16];
-                deputado[2] = dfcands[i][28];
+                nome_do_candidato = dfcands[i][18];
+                numero_do_candidato = dfcands[i][16];
+                partido = dfcands[i][28];
             }
             else if(numero_do_candidato == dfcands[i][16] && dfcands[i][14] == dep_distrital){
-                deputado[0] = dfcands[i][18];
-                deputado[1] = dfcands[i][16];
-                deputado[2] = dfcands[i][28];
+                nome_do_candidato = dfcands[i][18];
+                numero_do_candidato = dfcands[i][16];
+                partido = dfcands[i][28];
             }
             //Senador
             else if(numero_do_candidato == dfcands[i][16] && dfcands[i][14] == sen){
-                senador[0] = dfcands[i][18];
-                senador[1] = dfcands[i][16];
-                senador[2] = dfcands[i][28];
+                nome_do_candidato = dfcands[i][18];
+                numero_do_candidato = dfcands[i][16];
+                partido = dfcands[i][28];
             }
             else if(numero_do_candidato == dfcands[i][16] && dfcands[i][13] == sen1){
-                senador[3] = dfcands[i][18];
+                nome_pri_supsenador = dfcands[i][18];
             }
             else if(numero_do_candidato == dfcands[i][16] && dfcands[i][13] == sen2){
-                senador[4] = dfcands[i][18];
+                nome_seg_supsenador = dfcands[i][18];
             }
             //Governador
             else if(numero_do_candidato == dfcands[i][16] && dfcands[i][14] == gov){
-                governador[0] = dfcands[i][18];
-                governador[1] = dfcands[i][16];
-                governador[2] = dfcands[i][28];
+                nome_do_candidato = dfcands[i][18];
+                numero_do_candidato = dfcands[i][16];
+                partido = dfcands[i][28];
             }
             else if(numero_do_candidato == dfcands[i][16] && dfcands[i][14] == gov1){
-                governador[3] = dfcands [i][18];
+                nome_do_vice_candidato = dfcands [i][18];
             }
         }
     }
@@ -172,43 +186,43 @@ void Listcandidatos::lista_DF(){
             if(numero_do_candidato == dfcands[i][16] && dfcands[i][14] == dep_federal){
                 system("clear");
                 cout << endl << endl <<"---------------------------------------------------------" << endl;
-                cout << "\n\t\tDEPUTADO FEDERAL" << endl << endl;
-                cout << "\n\tCANDIDATO: " << deputado[0] << ";" << endl << endl;
-                cout << "\tNUMERO DO PARTIDO: " << deputado[1] << ";" <<endl;
-                cout << "\tNOME DO PARTIDO: " << deputado[2] << "." <<endl<< endl;
+                cout << "\n\t\t   DEPUTADO FEDERAL" << endl << endl;
+                cout << "\n\tCANDIDATO: " << nome_do_candidato << ";" << endl << endl;
+                cout << "\tNUMERO DO PARTIDO: " << numero_do_candidato << ";" <<endl;
+                cout << "\tNOME DO PARTIDO: " << partido << "." <<endl<< endl;
                 cout << "---------------------------------------------------------" << endl;
             }
             //Deputado Federal
             else if(numero_do_candidato == dfcands[i][16] && dfcands[i][14] == dep_distrital){
                 system("clear");
                 cout << endl << endl <<"---------------------------------------------------------" << endl;
-                cout << "\n\t\tDEPUTADO DISTRITAL" << endl << endl;
-                cout << "\n\tCANDIDATO: " << deputado[0] << ";" << endl << endl;
-                cout << "\tNUMERO DO PARTIDO: " << deputado[1] << ";" <<endl;
-                cout << "\tNOME DO PARTIDO: " << deputado[2] << "." <<endl<< endl;
+                cout << "\n\t\t   DEPUTADO DISTRITAL" << endl << endl;
+                cout << "\n\tCANDIDATO: " << nome_do_candidato << ";" << endl << endl;
+                cout << "\tNUMERO DO PARTIDO: " << numero_do_candidato << ";" <<endl;
+                cout << "\tNOME DO PARTIDO: " << partido << "." <<endl<< endl;
                 cout << "---------------------------------------------------------" << endl;
             }
             //Governador
             else if(numero_do_candidato == dfcands[i][16] && dfcands[i][14] == gov){
                 system("clear");
                 cout << endl << endl <<"---------------------------------------------------------" << endl;
-                cout << "\n\t\tGOVERNADOR" << endl << endl;
-                cout << "\n\tCANDIDATO: " << governador[0] << ";" << endl << endl;
-                cout << "\tVICE-GOVERNADOR: " << governador[3] << ";" << endl;
-                cout << "\tNUMERO DO PARTIDO: " << governador[1] << ";" << endl;
-                cout << "\tNOME DO PARTIDO: " << governador[2] << "." << endl << endl;
+                cout << "\n\t\t   GOVERNADOR" << endl << endl;
+                cout << "\n\tCANDIDATO: " << nome_do_candidato << ";" << endl << endl;
+                cout << "\tVICE-GOVERNADOR: " << nome_do_vice_candidato << ";" << endl;
+                cout << "\tNUMERO DO PARTIDO: " << numero_do_candidato << ";" << endl;
+                cout << "\tNOME DO PARTIDO: " << partido << "." << endl << endl;
                 cout << "---------------------------------------------------------" << endl;
             }
             //Senador
             else if(numero_do_candidato == dfcands[i][16] && dfcands[i][14] == sen){
                 system("clear");
                 cout << endl << endl <<"---------------------------------------------------------" << endl;
-                cout << "\n\t\tSENADOR" << endl << endl;
-                cout << "\n\tCANDIDATO: " << senador[0] << ";" << endl << endl;
-                cout << "\t1º SUPLENTE: " << senador[3] << ";" << endl;
-                cout << "\t2º SUPLENTE: " << senador[4] << ";" << endl;
-                cout << "\tNUMERO DO PARTIDO: " << senador[1] << ";" << endl;
-                cout << "\tNOME DO PARTIDO: " << senador[2] << "." << endl << endl;
+                cout << "\n\t\t   SENADOR" << endl << endl;
+                cout << "\n\tCANDIDATO: " << nome_do_candidato << ";" << endl << endl;
+                cout << "\t1º SUPLENTE: " << nome_pri_supsenador << ";" << endl;
+                cout << "\t2º SUPLENTE: " << nome_seg_supsenador << ";" << endl;
+                cout << "\tNUMERO DO PARTIDO: " << numero_do_candidato << ";" << endl;
+                cout << "\tNOME DO PARTIDO: " << partido << "." << endl << endl;
                 cout << "---------------------------------------------------------" << endl;
             }
         }
