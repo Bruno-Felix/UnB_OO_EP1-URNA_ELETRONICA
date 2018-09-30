@@ -27,8 +27,6 @@ class Listcandidatos : public Candidato{
     string get_nome_seg_supsenador();
     void set_nome_seg_supsenador(string nome_seg_supsenador);
 
-    void lista_candidatos();
-    void informacao_candidato(int numero);
     void lista_presidentes();
     void lista_DF();
 };

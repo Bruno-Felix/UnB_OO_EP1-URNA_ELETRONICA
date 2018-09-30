@@ -10,7 +10,6 @@ string Candidato::get_nome_do_candidato(){
 void Candidato::set_nome_do_candidato(string nome_do_candidato){
 	this-> nome_do_candidato = nome_do_candidato;
 }
-
 string Candidato::get_numero_do_candidato(){
 	return numero_do_candidato;
 }

@@ -125,7 +125,7 @@ void func_list(){
 		cout << endl << endl <<"---------------------------------------------------------" << endl;
 		cout << endl <<"\tINFORMAÇÕES DOS CANDIDATOS" << endl << endl;
 		cout << "\n\tDigite \"P\" para Candidatos à Presidencia;"<< endl;
-		cout << "\tDigite \"D\" para Candidatos os Demais." << endl;
+		cout << "\tDigite \"D\" para Candidatos aos Demais." << endl;
 		cout << "\tEscolha: ";
 		cin >> escolha;
 		cout << endl;
@@ -147,12 +147,10 @@ void func_list(){
 		}
 
 		if(escolha == 'p'){
-			system("clear");
 			listcandidatos1->lista_presidentes();
 		}
 
 		else if(escolha =='d'){
-			system("clear");
 			listcandidatos1->lista_DF();
 		};
 }

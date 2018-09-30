@@ -6,7 +6,6 @@
 using namespace std;
 
 Listcandidatos::Listcandidatos(){}
-
 Listcandidatos::~Listcandidatos(){}
 
 string Listcandidatos::get_nome_do_vice_candidato(){
@@ -33,6 +32,8 @@ void Listcandidatos::set_nome_seg_supsenador(string nome_seg_supsenador){
 //Informaçoes dos Candidatos à Presidencia
 void Listcandidatos::lista_presidentes(){
     
+    //Variáveis
+    int verdade = 0;
     string presidencia[27][58];
     string aux1 = "1";
     string aux2 = "2";
@@ -42,11 +43,13 @@ void Listcandidatos::lista_presidentes(){
     ifstream file("data/data_consulta_cand_2018_BR.csv");//Arquivo BR - file
 	if(!file.is_open()) cout << "ERRO NA LEITURA DO ARQUIVO BR" << '\n';
 
+    system("clear");
+
     //Inserção do número do candidato
     cout << endl << endl <<"---------------------------------------------------------" << endl;
 	cout << endl <<"\tINFORMAÇÕES DOS CANDIDATOS" << endl << endl;
     cout << endl <<"\tPRESIDÊNCIA" << endl;
-	cout << endl <<"\tDigite Número do Candidato para Busca: ";
+	cout << endl <<"\tDigite Número Válido do Candidato para Busca: ";
 	cin >> numero_do_candidato;
 
     //Leitura do arquivo BR
@@ -61,6 +64,10 @@ void Listcandidatos::lista_presidentes(){
 				getline(file, presidencia[i][j], '\n');//Leitura última string da linha, finalizada por "\n"
                 presidencia[i][j] = presidencia[i][j].substr(1, presidencia[i][j].size() - 2);//Retirando as aspas das strings
 			}
+        }
+        //Verificando se o numero_do_candidato é válido;
+        if(numero_do_candidato == presidencia[i][16]){
+            verdade ++;
         }
     }
 
@@ -83,21 +90,27 @@ void Listcandidatos::lista_presidentes(){
         }
     }
 
-    //Impressão do dados BR
-    system("clear");
-    cout << endl << endl <<"---------------------------------------------------------" << endl;
-    cout << "\n\t\t   PRESIDENTE" << endl << endl;
-    cout << "\n\tCANDIDATO: " << nome_do_candidato << ";" << endl << endl;
-    cout << "\t"<<"VICE-PRESIDENCIA: " << nome_do_vice_candidato << ";" << endl;
-    cout << "\tNUMERO DO PARTIDO: " << numero_do_candidato << ";" <<endl;
-    cout << "\tNOME DO PARTIDO: " << partido << "." <<endl;
-    cout <<"\n---------------------------------------------------------" << endl;
+    if(verdade > 0){
+        //Impressão do dados BR
+        system("clear");
+        cout << endl << endl <<"---------------------------------------------------------" << endl;            cout << "\n\t\t   PRESIDENTE" << endl << endl;
+        cout << "\n\tCANDIDATO: " << nome_do_candidato << ";" << endl << endl;
+        cout << "\t"<<"VICE-PRESIDENCIA: " << nome_do_vice_candidato << ";" << endl;
+        cout << "\tNUMERO DO PARTIDO: " << numero_do_candidato << ";" <<endl;
+        cout << "\tNOME DO PARTIDO: " << partido << "." <<endl;
+        cout <<"\n---------------------------------------------------------" << endl;
+    }
+    
+    else{
+         lista_presidentes();
+    }
 }
 
 //Informaçoes dos Candidatos ao DF
 void Listcandidatos::lista_DF(){
     
     //Variáveis
+    int verdade = 0;
     string dfcands[1238][58];
     string deputado[3];
     string senador[5];
@@ -111,15 +124,17 @@ void Listcandidatos::lista_DF(){
     string gov = "GOVERNADOR";
     string gov1 = "VICE-GOVERNADOR";
 
-    //Leitura dos dois arquivos
+    ///Leitura dos dois arquivos
     ifstream ip("data/data_consulta_cand_2018_DF.csv");//Arquivo DF - ip
 	if(!ip.is_open()) cout << "ERROR NA LEITURA DO ARQUIVO DF" << '\n';
+
+    system("clear");
 
     //Inserção do número do candidato
     cout << endl << endl <<"---------------------------------------------------------" << endl;
     cout << endl <<"\tINFORMAÇÕES DOS CANDIDATOS" << endl << endl;
     cout << endl <<"\tDEP. DISTRITAL, DEP. FEDERAL, SENADOR E GOVERNADOR" << endl;
-	cout << endl <<"\tDigite Número do Candidato para Busca: ";
+	cout << endl <<"\tDigite Número Válido do Candidato para Busca: ";
 	cin >> numero_do_candidato;
 
     //Leitura do arquivo DF
@@ -134,6 +149,10 @@ void Listcandidatos::lista_DF(){
 				getline(ip, dfcands[i][j], '\n');
                 dfcands[i][j] = dfcands[i][j].substr(1, dfcands[i][j].size() - 2);
 			}
+        }
+        //Verificando se o numero_do_candidato é válido;
+        if(numero_do_candidato == dfcands[i][16]){
+            verdade ++;
         }
     }
     
@@ -181,6 +200,7 @@ void Listcandidatos::lista_DF(){
     }
 
     //Imprime dados DF
+    if(verdade > 0){
         for(int i=0; i<1238; i++){
             //Deputado Distrital
             if(numero_do_candidato == dfcands[i][16] && dfcands[i][14] == dep_federal){
@@ -226,4 +246,8 @@ void Listcandidatos::lista_DF(){
                 cout << "---------------------------------------------------------" << endl;
             }
         }
+    }
+    else{
+        lista_DF();
+    }
 }
