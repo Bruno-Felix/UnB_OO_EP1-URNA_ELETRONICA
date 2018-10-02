@@ -13,6 +13,7 @@
 #include <string.h>
 #include "candidato.hpp"
 #include "listcandidatos.hpp"
+#include "votacao.hpp"
 
 using namespace std;
 
@@ -158,19 +159,14 @@ void func_list(){
 //Escolha 2, Votação 2018
 void func_voto(){
 
-	int numero_de_eleitores;
+	Votacao * votacao1 = new Votacao();
 
-		system("clear");
-		cout << endl << endl <<"---------------------------------------------------------" << endl;
-		cout << endl <<"	VOTAÇÃO 2018:" << endl;
-	
-		cout << "	Digite Número de Eleitores: ";
-		cin >> numero_de_eleitores;
+	votacao1->votacao();
 }
 
 //Escolha 3, Sair
 void sair_menu(){
-		saida();
+	saida();
 }
 
 char resposta(){

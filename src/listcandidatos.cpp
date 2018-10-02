@@ -37,9 +37,8 @@ void Listcandidatos::lista_presidentes(){
     string presidencia[27][58];
     string aux1 = "1";
     string aux2 = "2";
-    string numero_do_candidato; //Número do Candidato
     
-    //Leitura dos dois arquivos
+    //Leitura do arquivo BR
     ifstream file("data/data_consulta_cand_2018_BR.csv");//Arquivo BR - file
 	if(!file.is_open()) cout << "ERRO NA LEITURA DO ARQUIVO BR" << '\n';
 
@@ -115,7 +114,6 @@ void Listcandidatos::lista_DF(){
     string deputado[3];
     string senador[5];
     string governador[4];
-    string numero_do_candidato; //Número do Candidato
     string dep_federal = "DEPUTADO FEDERAL";
     string dep_distrital = "DEPUTADO DISTRITAL";
     string sen = "SENADOR";
@@ -124,7 +122,7 @@ void Listcandidatos::lista_DF(){
     string gov = "GOVERNADOR";
     string gov1 = "VICE-GOVERNADOR";
 
-    ///Leitura dos dois arquivos
+    //Leitura dos arquivos DF
     ifstream ip("data/data_consulta_cand_2018_DF.csv");//Arquivo DF - ip
 	if(!ip.is_open()) cout << "ERROR NA LEITURA DO ARQUIVO DF" << '\n';
 
