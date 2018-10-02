@@ -60,8 +60,12 @@ void Votacao::votacao(){
     string gov1 = "VICE-GOVERNADOR";
     string aux1 = "1";
     string aux2 = "2";
+    string nulo = "NULO";
+    string branco = "BRANCO";
     int aux;
-
+    int verdade;
+    char resposta;
+    
     //Inserindo Número de Eleitores
     numero_de_eleitores = num_de_eleitores();
     cout << numero_de_eleitores<< endl;
@@ -108,7 +112,7 @@ void Votacao::votacao(){
     for(int i=0; i<numero_de_eleitores; i++){
 
     	system("clear");
-
+        resposta = 'r';
 	    cout << endl << endl <<"---------------------------------------------------------" << endl;
 	    cout << endl <<"	VOTAÇÃO 2018" << endl << endl << endl;
         
@@ -118,26 +122,130 @@ void Votacao::votacao(){
         cout << "\tDigite seu Nome Completo: ";
         getline(cin, nome_do_eleitor);
         eleicao[i][0] = nome_do_eleitor;
-        
+
+        while(resposta != 's' && resposta != 'c'){
+
         //Voto Deputado Distrital
         system("clear");
+        verdade = 0;
+        aux = 0;
         cout << endl << endl <<"---------------------------------------------------------" << endl;
 	    cout << endl <<"	VOTAÇÃO 2018" << endl << endl << endl;
         cout << "\tEleitor: " << eleicao[i][0];
         cout << endl << endl <<"---------------------------------------------------------" << endl << endl;
-        cout << "\t\t   DEPUTADO DISTRITAL" << endl << endl;
+        cout << "\t\tVOTO PARA DEPUTADO DISTRITAL" << endl << endl;
         
+        cout << "\tDigite \"0\" para Voto NULO" << endl;
+        cout << "\tDigite \"1\" para Voto BRANCO" << endl;
         cout << endl <<"\tDigite Número do Candidato: ";
 	    cin >> numero_do_candidato;
-        
-        for(int k=0; k<1238; k++){
-	        for(int j=0; j<58; j++){
-                if(numero_do_candidato == dfcands[k][16] && dfcands[k][14] == dep_distrital){
+        cout << numero_do_candidato << endl;
+
+            /* Voto = 0 é voto nulo */
+            if(numero_do_candidato == "0"){
+                eleicao[i][1] = nulo;
+                cout << branco << endl;
+                cout <<eleicao[i][1] << endl;
+            }
+
+            /* Voto = 1 é voto Branco */
+            else if(numero_do_candidato == "1"){
+                eleicao[i][1] = branco;
+                cout << branco << endl;
+                cout <<eleicao[i][1] << endl;
+            }
+
+            else{
+                for(int k=0; k<1238; k++){
+	                for(int j=0; j<58; j++){
+                        if(numero_do_candidato == dfcands[k][16] && dfcands[k][14] == dep_distrital){
+                            verdade++;
+                            eleicao[i][1] = dfcands[k][18];
+                            nome_do_candidato = dfcands[k][18];
+                            numero_do_candidato = dfcands[k][16];
+                            partido = dfcands[k][28];
+                        }
+                    }
                     aux++;
-                    eleicao[i][1] = dfcands[k][18];
                 }
             }
+
+        if(verdade>0){
+            //Confirmação do Voto
+            system("clear");
+            cout << endl << endl <<"---------------------------------------------------------" << endl;
+	        cout << endl <<"	VOTAÇÃO 2018" << endl << endl << endl;
+            cout << "\tEleitor: " << eleicao[i][0];
+            cout << endl << endl <<"---------------------------------------------------------" << endl << endl;
+        
+            cout << "\t\tSEU VOTO PARA DEPUTADO DISTRITAL" << endl << endl;
+            cout << "\n\tCANDIDATO: " << nome_do_candidato << ";" << endl << endl;
+            cout << "\tNUMERO DO PARTIDO: " << numero_do_candidato << ";" <<endl;
+            cout << "\tNOME DO PARTIDO: " << partido << "." << endl<< endl;
+
+            cout << "\nDigite \"R\" para Corrigir;" << endl;
+            cout << "Digite \"C\" para Confirmar;" << endl << endl;
+            cout << "Digite \"S\" para Cancelar e Sair." << endl;  
+            cout << "Escolha: ";
+	        cin >> resposta;
+
+            if(resposta == 's'){
+				system("clear");
+	            cout << "\n\n\tInsira make run para reiniciar o programa, Obrigado!\n\n" << endl;
+	            exit(0);
+		    }
+               
+	        if(resposta < 97){
+		        // Transforma as letras maiúsculas da resposta do usuario em minúsculas
+		        resposta = resposta + 32;
+	        }
+
+	        while(resposta != 'c' && resposta != 's' && resposta != 'r'){
+		        cout << endl << "Por Favor, Escolha uma das Opções: \"R\", \"C\" ou \"S\"" << endl;
+		        cout << "Escolha: ";
+		        cin >> resposta;
+
+		        if(resposta < 97){
+			        // Transforma as letras maiúsculas da resposta do usuario em minúsculas
+			        resposta = resposta + 32;
+		        }
+	        }  
+        }   
+
+        else if(verdade == 0){
+            system("clear");
+            cout << endl << endl <<"---------------------------------------------------------" << endl;
+	        cout << endl <<"	VOTAÇÃO 2018" << endl << endl << endl;
+            cout << "\tEleitor: " << eleicao[i][0];
+            cout << endl << endl <<"---------------------------------------------------------" << endl << endl;
+        
+            cout << "\t\tSEU VOTO PARA DEPUTADO DISTRITAL" << endl << endl;
+            cout << "\n\tVOTO " << eleicao[i][1] << "." << endl << endl;
+            
+            cout << "\nDigite \"R\" para Corrigir;" << endl;
+            cout << "Digite \"C\" para Confirmar;" << endl << endl;
+            cout << "Digite \"S\" para Cancelar e Sair." << endl;  
+            cout << "Escolha: ";
+	        cin >> resposta;
+
+	        if(resposta < 97){
+		        // Transforma as letras maiúsculas da resposta do usuario em minúsculas
+		        resposta = resposta + 32;
+	        }
+
+	        while(resposta != 'c' && resposta != 's' && resposta != 'r'){
+		        cout << endl << "Por Favor, Escolha uma das Opções: \"R\", \"C\" ou \"S\"" << endl;
+		        cout << "Escolha: ";
+		        cin >> resposta;
+
+		        if(resposta < 97){
+			        // Transforma as letras maiúsculas da resposta do usuario em minúsculas
+			        resposta = resposta + 32;
+		        }
+	        }
         }
+
+    }
 
         //Voto Deputado Federal
         system("clear");
@@ -145,7 +253,7 @@ void Votacao::votacao(){
 	    cout << endl <<"	VOTAÇÃO 2018" << endl << endl << endl;
         cout << "\tEleitor: " << eleicao[i][0];
         cout << endl << endl <<"---------------------------------------------------------" << endl << endl;
-        cout << "\t\t   DEPUTADO FEDERAL" << endl << endl;
+        cout << "\t\tVOTO PARA DEPUTADO FEDERAL" << endl << endl;
         
         cout << endl <<"\tDigite Número do Candidato: ";
 	    cin >> numero_do_candidato;
@@ -153,19 +261,19 @@ void Votacao::votacao(){
         for(int k=0; k<1238; k++){
 	        for(int j=0; j<58; j++){
                 if(numero_do_candidato == dfcands[k][16] && dfcands[k][14] == dep_federal){
-                    aux++;
+                    verdade++;
                     eleicao[i][2] = dfcands[k][18];
                 }
             }
         }
 
-        //Voto Senador
+        //Voto Senador - 1ª Vaga
         system("clear");
         cout << endl << endl <<"---------------------------------------------------------" << endl;
 	    cout << endl <<"	VOTAÇÃO 2018" << endl << endl << endl;
         cout << "\tEleitor: " << eleicao[i][0];
         cout << endl << endl <<"---------------------------------------------------------" << endl << endl;
-        cout << "\t\t   SENADOR" << endl << endl;
+        cout << "\t\tVOTO PARA SENADOR - 1ª VAGA:" << endl << endl;
 
         cout << endl <<"\tDigite Número do Candidato: ";
 	    cin >> numero_do_candidato;
@@ -173,8 +281,28 @@ void Votacao::votacao(){
         for(int k=0; k<1238; k++){
 	        for(int j=0; j<58; j++){
                 if(numero_do_candidato == dfcands[k][16] && dfcands[k][14] == sen){
-                    aux++;
+                    verdade++;
                     eleicao[i][3] = dfcands[k][18];
+                }
+            }
+        }
+
+        //Voto Senador - 2ª Vaga
+        system("clear");
+        cout << endl << endl <<"---------------------------------------------------------" << endl;
+	    cout << endl <<"	VOTAÇÃO 2018" << endl << endl << endl;
+        cout << "\tEleitor: " << eleicao[i][0];
+        cout << endl << endl <<"---------------------------------------------------------" << endl << endl;
+        cout << "\t\tVOTO PARA SENADOR - 2ª VAGA:" << endl << endl;
+
+        cout << endl <<"\tDigite Número do Candidato: ";
+	    cin >> numero_do_candidato;
+        
+        for(int k=0; k<1238; k++){
+	        for(int j=0; j<58; j++){
+                if(numero_do_candidato == dfcands[k][16] && dfcands[k][14] == sen){
+                    verdade++;
+                    eleicao[i][4] = dfcands[k][18];
                 }
             }
         }
@@ -185,7 +313,7 @@ void Votacao::votacao(){
 	    cout << endl <<"	VOTAÇÃO 2018" << endl << endl << endl;
         cout << "\tEleitor: " << eleicao[i][0];
         cout << endl << endl <<"---------------------------------------------------------" << endl << endl;
-        cout << "\t\t   GOVERNADOR" << endl << endl;
+        cout << "\t\tVOTO PARA GOVERNADOR" << endl << endl;
        
         cout << endl <<"\tDigite Número do Candidato: ";
 	    cin >> numero_do_candidato;
@@ -193,8 +321,8 @@ void Votacao::votacao(){
         for(int k=0; k<1238; k++){
 	        for(int j=0; j<58; j++){
                 if(numero_do_candidato == dfcands[k][16] && dfcands[k][14] == gov){
-                    aux++;
-                    eleicao[i][4] = dfcands[k][18];
+                    verdade++;
+                    eleicao[i][5] = dfcands[k][18];
                 }
             }
         }
@@ -205,7 +333,7 @@ void Votacao::votacao(){
 	    cout << endl <<"	VOTAÇÃO 2018" << endl << endl << endl;
         cout << "\tEleitor: " << eleicao[i][0];
         cout << endl << endl <<"---------------------------------------------------------" << endl << endl;
-        cout << "\t\t   PRESIDENTE" << endl << endl;
+        cout << "\t\tVOTO PARA PRESIDENTE" << endl << endl;
        
         cout << endl <<"\tDigite Número do Candidato: ";
 	    cin >> numero_do_candidato;
@@ -213,7 +341,7 @@ void Votacao::votacao(){
         for(int k=0; k<27; k++){
 		    for(int j=0; j<58; j++){
                 if(numero_do_candidato == presidencia[k][16] && presidencia[k][13] == aux1){
-                    eleicao[i][5] = presidencia[k][18];
+                    eleicao[i][6] = presidencia[k][18];
                 }
             }
         }
@@ -226,4 +354,6 @@ void Votacao::votacao(){
     cout << eleicao[0][3] << endl;
     cout << eleicao[0][4] << endl;
     cout << eleicao[0][5] << endl;
+    cout << eleicao[0][6] << endl;
+
 }
