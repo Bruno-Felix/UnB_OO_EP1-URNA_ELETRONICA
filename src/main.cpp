@@ -55,6 +55,7 @@ int main (){
 			auxResposta = 'r';
 			while(auxResposta == 'r'){
 				func_voto();
+				cout << endl << endl <<"---------------------------------------------------------" << endl;
 				auxResposta = resposta();
 
 				if(auxResposta == 's'){
@@ -173,8 +174,8 @@ char resposta(){
 
 	char resposta;
 
-	cout << "\nDigite \"R\" para refazer ação;" << endl;
-	cout << "Digite \"M\" para voltar ao menu;"<< endl;
+	cout << "\nDigite \"R\" para Refazer Ação;" << endl;
+	cout << "Digite \"M\" para Voltar ao Menu;"<< endl;
 	cout << "Digite \"S\" para Sair." << endl;
 	
 	cout << "Escolha: ";
