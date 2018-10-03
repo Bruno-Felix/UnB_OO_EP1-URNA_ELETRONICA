@@ -71,7 +71,7 @@ void Votacao::votacao(){
     string sen1 = "9";
     string sen2 = "10";
     string gov = "GOVERNADOR";
-    string gov1 = "VICE-GOVERNADOR";
+    string vice_gov = "VICE-GOVERNADOR";
     string aux1 = "1";
     string aux2 = "2";
     string nulo = "NULO";
@@ -150,8 +150,8 @@ void Votacao::votacao(){
         cout << "\t\tVOTO PARA DEPUTADO DISTRITAL" << endl << endl;
         
         cout << "\tDigite \"0\" para Voto NULO;" << endl;
-        cout << "\tDigite \"1\" para Voto BRANCO" << endl;
-        cout << endl <<"\tDigite Número do Candidato: ";
+        cout << "\tDigite \"1\" para Voto BRANCO;" << endl;
+        cout << endl <<"\tDigite Número Válido do Candidato: ";
 	    cin >> numero_do_candidato;
 
             // Voto = 0 é voto nulo
@@ -191,6 +191,7 @@ void Votacao::votacao(){
             cout << "\n\tCANDIDATO: " << nome_do_candidato << ";" << endl << endl;
             cout << "\tNUMERO DO PARTIDO: " << numero_do_candidato << ";" <<endl;
             cout << "\tNOME DO PARTIDO: " << partido << "." << endl<< endl;
+            cout << endl <<"---------------------------------------------------------" << endl << endl;
                           
             cout << "\nDigite \"R\" para Corrigir;" << endl;
             cout << "Digite \"S\" para Cancelar;" << endl << endl;
@@ -224,7 +225,8 @@ void Votacao::votacao(){
         
             cout << "\t\tSEU VOTO PARA DEPUTADO DISTRITAL" << endl << endl;
             cout << "\n\tVOTO " << eleicao[i][1] << "." << endl << endl;
-            
+            cout << endl <<"---------------------------------------------------------" << endl << endl;
+
             cout << "\nDigite \"R\" para Corrigir;" << endl;
             cout << "Digite \"S\" para Cancelar;" << endl << endl;
             cout << "Digite \"C\" para Confirmar." << endl << endl;  
@@ -270,8 +272,8 @@ void Votacao::votacao(){
         cout << "\t\tVOTO PARA DEPUTADO FEDERAL" << endl << endl;
         
         cout << "\tDigite \"0\" para Voto NULO;" << endl;
-        cout << "\tDigite \"1\" para Voto BRANCO" << endl;
-        cout << endl <<"\tDigite Número do Candidato: ";
+        cout << "\tDigite \"1\" para Voto BRANCO;" << endl;
+        cout << endl <<"\tDigite Número Válido do Candidato: ";
         cin >> numero_do_candidato;
     
         // Voto = 0 é voto nulo
@@ -313,7 +315,8 @@ void Votacao::votacao(){
             cout << "\n\tCANDIDATO: " << nome_do_candidato << ";" << endl << endl;
             cout << "\tNUMERO DO PARTIDO: " << numero_do_candidato << ";" <<endl;
             cout << "\tNOME DO PARTIDO: " << partido << "." << endl<< endl;
-                        
+            cout << endl <<"---------------------------------------------------------" << endl << endl; 
+
             cout << "\nDigite \"R\" para Corrigir;" << endl;
             cout << "Digite \"S\" para Cancelar;" << endl << endl;
             cout << "Digite \"C\" para Confirmar." << endl << endl;  
@@ -346,7 +349,8 @@ void Votacao::votacao(){
         
             cout << "\t\tSEU VOTO PARA DEPUTADO FEDERAL" << endl << endl;
             cout << "\n\tVOTO " << eleicao[i][2] << "." << endl << endl;
-            
+            cout << endl <<"---------------------------------------------------------" << endl << endl;
+
             cout << "\nDigite \"R\" para Corrigir;" << endl;
             cout << "Digite \"S\" para Cancelar;" << endl << endl;
             cout << "Digite \"C\" para Confirmar." << endl << endl;  
@@ -393,8 +397,8 @@ void Votacao::votacao(){
         cout << "\t\tVOTO PARA SENADOR - 1ª VAGA:" << endl << endl;
 
         cout << "\tDigite \"0\" para Voto NULO;" << endl;
-        cout << "\tDigite \"1\" para Voto BRANCO" << endl;
-        cout << endl <<"\tDigite Número do Candidato: ";
+        cout << "\tDigite \"1\" para Voto BRANCO;" << endl;
+        cout << endl <<"\tDigite Número Válido do Candidato: ";
 	    cin >> numero_do_candidato;
         cout <<" Numero:" << numero_do_candidato << endl;
         
@@ -446,7 +450,8 @@ void Votacao::votacao(){
             cout << "\t2º SUPLENTE: " << nome_seg_supsenador << ";" << endl;
             cout << "\tNUMERO DO PARTIDO: " << numero_do_candidato << ";" << endl;
             cout << "\tNOME DO PARTIDO: " << partido << "." << endl << endl;
-                        
+            cout << endl <<"---------------------------------------------------------" << endl << endl;
+
             cout << "\nDigite \"R\" para Corrigir;" << endl;
             cout << "Digite \"S\" para Cancelar;" << endl << endl;
             cout << "Digite \"C\" para Confirmar." << endl << endl;  
@@ -479,7 +484,8 @@ void Votacao::votacao(){
         
             cout << "\t\tSEU VOTO PARA SENADOR - 1ª VAGA" << endl << endl;
             cout << "\n\tVOTO " << eleicao[i][3] << "." << endl << endl;
-            
+            cout << endl <<"---------------------------------------------------------" << endl << endl;
+
             cout << "\nDigite \"R\" para Corrigir;" << endl;
             cout << "Digite \"S\" para Cancelar;" << endl << endl;
             cout << "Digite \"C\" para Confirmar." << endl << endl;  
@@ -518,8 +524,8 @@ void Votacao::votacao(){
         cout << "\t\tVOTO PARA SENADOR - 2ª VAGA:" << endl << endl;
 
         cout << "\tDigite \"0\" para Voto NULO;" << endl;
-        cout << "\tDigite \"1\" para Voto BRANCO" << endl;
-        cout << endl <<"\tDigite Número do Candidato: ";
+        cout << "\tDigite \"1\" para Voto BRANCO;" << endl;
+        cout << endl <<"\tDigite Número Válido do Candidato: ";
 	    cin >> numero_do_candidato;
         
         // Voto = 0 é voto nulo
@@ -570,7 +576,8 @@ void Votacao::votacao(){
             cout << "\t2º SUPLENTE: " << nome_seg_supsenador << ";" << endl;
             cout << "\tNUMERO DO PARTIDO: " << numero_do_candidato << ";" << endl;
             cout << "\tNOME DO PARTIDO: " << partido << "." << endl << endl;
-                        
+            cout << endl <<"---------------------------------------------------------" << endl << endl;
+
             cout << "\nDigite \"R\" para Corrigir;" << endl;
             cout << "Digite \"S\" para Cancelar;" << endl << endl;
             cout << "Digite \"C\" para Confirmar." << endl << endl;  
@@ -603,7 +610,8 @@ void Votacao::votacao(){
         
             cout << "\t\tSEU VOTO PARA SENADOR - 2ª VAGA" << endl << endl;
             cout << "\n\tVOTO " << eleicao[i][4] << "." << endl << endl;
-            
+            cout << endl <<"---------------------------------------------------------" << endl << endl;
+
             cout << "\nDigite \"R\" para Corrigir;" << endl;
             cout << "Digite \"S\" para Cancelar;" << endl << endl;
             cout << "Digite \"C\" para Confirmar." << endl << endl;  
@@ -642,8 +650,8 @@ void Votacao::votacao(){
         cout << "\t\tVOTO PARA GOVERNADOR" << endl << endl;
        
         cout << "\tDigite \"0\" para Voto NULO;" << endl;
-        cout << "\tDigite \"1\" para Voto BRANCO" << endl;
-        cout << endl <<"\tDigite Número do Candidato: ";
+        cout << "\tDigite \"1\" para Voto BRANCO;" << endl;
+        cout << endl <<"\tDigite Número Válido do Candidato: ";
 	    cin >> numero_do_candidato;
         
         // Voto = 0 é voto nulo
@@ -667,7 +675,7 @@ void Votacao::votacao(){
                         numero_do_candidato = dfcands[k][16];
                         partido = dfcands[k][28];
                     }
-                    else if(numero_do_candidato == dfcands[k][16] && dfcands[k][14] == aux2){
+                    else if(numero_do_candidato == dfcands[k][16] && dfcands[k][14] == vice_gov){
                         nome_do_vice_candidato = dfcands [k][18];
                     }
                 }
@@ -689,7 +697,8 @@ void Votacao::votacao(){
             cout << "\tVICE-GOVERNADOR: " << nome_do_vice_candidato << ";" << endl;
             cout << "\tNUMERO DO PARTIDO: " << numero_do_candidato << ";" << endl;
             cout << "\tNOME DO PARTIDO: " << partido << "." << endl << endl;
-                        
+            cout << endl <<"---------------------------------------------------------" << endl << endl;
+
             cout << "\nDigite \"R\" para Corrigir;" << endl;
             cout << "Digite \"S\" para Cancelar;" << endl << endl;
             cout << "Digite \"C\" para Confirmar." << endl << endl;  
@@ -722,7 +731,8 @@ void Votacao::votacao(){
         
             cout << "\t\tSEU VOTO PARA GOVERNADOR" << endl << endl;
             cout << "\n\tVOTO " << eleicao[i][5] << "." << endl << endl;
-            
+            cout << endl <<"---------------------------------------------------------" << endl << endl;
+
             cout << "\nDigite \"R\" para Corrigir;" << endl;
             cout << "Digite \"S\" para Cancelar;" << endl << endl;
             cout << "Digite \"C\" para Confirmar." << endl << endl;  
@@ -761,8 +771,8 @@ void Votacao::votacao(){
         cout << "\t\tVOTO PARA PRESIDENTE" << endl << endl;
        
         cout << "\tDigite \"0\" para Voto NULO;" << endl;
-        cout << "\tDigite \"1\" para Voto BRANCO" << endl;
-        cout << endl <<"\tDigite Número do Candidato: ";
+        cout << "\tDigite \"1\" para Voto BRANCO;" << endl;
+        cout << endl <<"\tDigite Número Válido do Candidato: ";
 	    cin >> numero_do_candidato;
 
         // Voto = 0 é voto nulo
@@ -809,7 +819,8 @@ void Votacao::votacao(){
             cout << "\tVICE-GOVERNADOR: " << nome_do_vice_candidato << ";" << endl;
             cout << "\tNUMERO DO PARTIDO: " << numero_do_candidato << ";" << endl;
             cout << "\tNOME DO PARTIDO: " << partido << "." << endl << endl;
-                        
+            cout << endl <<"---------------------------------------------------------" << endl << endl;
+
             cout << "\nDigite \"R\" para Corrigir;" << endl;
             cout << "Digite \"S\" para Cancelar;" << endl << endl;
             cout << "Digite \"C\" para Confirmar." << endl << endl;  
@@ -842,7 +853,8 @@ void Votacao::votacao(){
         
             cout << "\t\tSEU VOTO PARA PREDIDENTE" << endl << endl;
             cout << "\n\tVOTO " << eleicao[i][6] << "." << endl << endl;
-            
+            cout << endl <<"---------------------------------------------------------" << endl << endl;
+
             cout << "\nDigite \"R\" para Corrigir;" << endl;
             cout << "Digite \"S\" para Cancelar;" << endl << endl;
             cout << "Digite \"C\" para Confirmar." << endl << endl;  
@@ -866,20 +878,14 @@ void Votacao::votacao(){
 	        }
         }
     }
-
-
-
-
-
-    
     //Teste
-    cout << eleicao[0][0] << endl;
-    cout << eleicao[0][1] << endl;
-    cout << eleicao[0][2] << endl;
-    cout << eleicao[0][3] << endl;
-    cout << eleicao[0][4] << endl;
-    cout << eleicao[0][5] << endl;
-    cout << eleicao[0][6] << endl;
+    //cout << eleicao[0][0] << endl;
+    //cout << eleicao[0][1] << endl;
+    //cout << eleicao[0][2] << endl;
+    //cout << eleicao[0][3] << endl;
+    //cout << eleicao[0][4] << endl;
+    //cout << eleicao[0][5] << endl;
+    //cout << eleicao[0][6] << endl;
 
     }
 }
