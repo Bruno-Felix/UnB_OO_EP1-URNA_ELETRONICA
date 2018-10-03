@@ -510,6 +510,13 @@ void Votacao::votacao(){
         }
     }
 
+    if(resposta == 's'){
+		system("clear");
+	    cout << "\n\n\tVOTAÇÃO CANCELADA." << endl;
+        resposta = 'r';
+        break;
+	}
+
     resposta = 'r';
     while(resposta != 's' && resposta != 'c'){
 
@@ -636,6 +643,13 @@ void Votacao::votacao(){
         }
     }
 
+    if(resposta == 's'){
+		system("clear");
+	    cout << "\n\n\tVOTAÇÃO CANCELADA." << endl;
+        resposta = 'r';
+        break;
+	}
+
     resposta = 'r';
     while(resposta != 's' && resposta != 'c'){
 
@@ -756,6 +770,13 @@ void Votacao::votacao(){
 	        }
         }
     }
+
+    if(resposta == 's'){
+		system("clear");
+	    cout << "\n\n\tVOTAÇÃO CANCELADA." << endl;
+        resposta = 'r';
+        break;
+	}
 
     resposta = 'r';
     while(resposta != 's' && resposta != 'c'){
@@ -878,6 +899,7 @@ void Votacao::votacao(){
 	        }
         }
     }
+
     //Teste
     //cout << eleicao[0][0] << endl;
     //cout << eleicao[0][1] << endl;
@@ -887,5 +909,44 @@ void Votacao::votacao(){
     //cout << eleicao[0][5] << endl;
     //cout << eleicao[0][6] << endl;
 
+    }
+
+    cout << endl <<"---------------------------------------------------------" << endl << endl;
+    cout << "FIM DE VOTAÇÃO" << endl << endl;
+    cout << "Digite \"H\" para ver Histórico de Votação;" << endl << endl;
+    cout << "Digite \"S\" para Sair." << endl;
+    cout << "Escolha: ";
+    cin >> resposta;
+
+    if(resposta < 97){
+        // Transforma as letras maiúsculas da resposta do usuario em minúsculas
+        resposta = resposta + 32;
+    }
+
+    while(resposta != 'a' && resposta != 's' && resposta != 'h'){
+        cout << endl << "Por Favor, Escolha uma das Opções: \"A\", \"S\" ou \"H\"" << endl;
+        cout << "Escolha: ";
+        cin >> resposta;
+
+        if(resposta < 97){
+            // Transforma as letras maiúsculas da resposta do usuario em minúsculas
+            resposta = resposta + 32;
+        }
+    }
+
+    if(resposta == 'h'){
+        for(int i=0; i<numero_de_eleitores; i++){
+            cout << endl << endl <<"---------------------------------------------------------" << endl;
+	        cout << endl <<"	VOTAÇÃO 2018" << endl << endl << endl;
+            cout << "\tEleitor: " << eleicao[i][0];
+            cout << endl << endl <<"---------------------------------------------------------" << endl << endl;
+            
+            cout << "VOTO PARA DEPUTADO DISTRITAL: " <<  eleicao[i][1] << endl;
+            cout << "VOTO PARA DEPUTADO FEDERAL: " <<  eleicao[i][2] << endl;
+            cout << "VOTO PARA SENADOR - 1ª VAGA: " <<  eleicao[i][3] << endl;
+            cout << "VOTO PARA SENADOR - 2ª VAGA: " <<  eleicao[i][4] << endl;
+            cout << "VOTO PARA GOVERNADOR: " <<  eleicao[i][5] << endl;
+            cout << "VOTO PARA PRESINDENTE: " <<  eleicao[i][6] << endl;
+        }
     }
 }
